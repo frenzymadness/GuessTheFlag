@@ -8,7 +8,7 @@ if len(sys.argv) < 2:
 else:
     maps = [sys.argv[1]]
 
-data = {}
+data = []
 
 for map in maps:
     print('Processing map {}'.format(map))
@@ -19,6 +19,6 @@ for map in maps:
         for line in content['data']:
             for point in line:
                 flagdata.append(tuple(content['palette'][point]))
-        data[name] = flagdata
+        data.append(tuple(flagdata))
 
-print(data)
+print(tuple(data))
