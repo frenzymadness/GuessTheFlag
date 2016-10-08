@@ -11,7 +11,7 @@ else:
 data = []
 
 for map in maps:
-    print('Processing map {}'.format(map))
+    # print('Processing map {}'.format(map))
     name = map.split('/')[1].split('.')[0].lstrip('flag-of-')
     with open(map, 'r') as mapfile:
         content = json.load(mapfile)
@@ -19,6 +19,4 @@ for map in maps:
         for line in content['data']:
             for point in line:
                 flagdata.append(tuple(content['palette'][point]))
-        data.append(tuple(flagdata))
-
-print(tuple(data))
+        print(str(tuple(flagdata)))
